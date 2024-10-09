@@ -1,0 +1,139 @@
+@font-face {
+    font-family: 'establishRoomNo703OTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRoomNo703OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    font-family: 'establishRoomNo703OTF';
+    -webkit-text-stroke: 0.2px black;
+    color: white;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #303533;
+}
+
+nav{
+    position: fixed;
+    top:0;
+    width: calc(100%);
+    height: 70px;
+    background-color: #181C14;
+    color: white;
+    font-weight: 700;
+    font-size: 40px;
+    border-radius: 10px;
+}
+
+main{
+    background-color: #3C3D37;
+    height: 100%;
+    gap: 5px;
+    
+}
+
+.aution-item-container{ 
+    display: flex;
+    align-items: center;
+    background-color: #697565;
+    width: 100%;
+    height: 130px;
+    border-radius: 10px;
+    gap: 10px;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.aution-item-container:hover{
+    background-color: #808e7a;
+    cursor: pointer;
+}
+
+.aution-item-image{
+    background-color: #303533;
+    width: 20%;
+    height: 100%;
+}
+
+.aution-item-name{
+    font-size: 30px;
+}
+
+.aution-item-description{
+    word-wrap: break-word;
+}
+
+.aution-item-title-container{
+    display: flex;
+    align-items: center;
+    background-color: #697565;
+    width: 100%;
+    height: 130px;
+    border-radius: 10px;
+    gap: 10px;
+    padding: 5px;
+    transition: 0.3s;
+    height: 30px;
+    background-color: #38412f;
+    text-align: center;
+}
+
+
+
+tr >* {
+    text-align: center;
+    
+}
+
+tr >*:nth-child(1){
+    width: 20%;
+}
+
+tr >*:nth-child(2){
+    width: 10%;
+}
+
+tr >*:nth-child(3){
+    width: 25%;
+}
+
+tr >*:nth-child(4){
+    width: 10%;
+}
+
+tr >*:nth-child(5){
+    width: 15%;
+}
+
+tr >*:nth-child(6){
+    width: 10%;
+}
+
+tr >*:nth-child(7){
+    width: 10%;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+tr{
+    border: 3px solid rgb(0, 0, 0);
+}
+
+table {
+    width: 100%; /* 테이블이 전체 너비를 차지하도록 설정 */
+    border-collapse: collapse; /* 테이블 경계 통합 */
+}
+
+td {
+    overflow: hidden; /* 넘치는 내용 숨기기 */
+    white-space: nowrap; /* 줄 바꿈 방지 */
+    padding: 3px; /* 여백 추가 */
+}
