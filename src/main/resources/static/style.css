@@ -16,6 +16,7 @@ html, body{
     align-items: center;
     flex-direction: column;
     background-color: #303533;
+    min-width: 1300px
 }
 
 nav{
