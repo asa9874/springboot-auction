@@ -12,4 +12,9 @@ public class UserController {
     public String login_form(){
         return "login_form";
     }
+
+    @GetMapping("/register")
+    public String register_form(){
+        return "register_form";
+    }
 }
