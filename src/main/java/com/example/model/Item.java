@@ -19,6 +19,8 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String imgurl;
+
     private String name;
 
     @Column(length = 200)
@@ -26,4 +28,7 @@ public class Item {
     
     @OneToMany(mappedBy = "item")
     private List<Auction> auctions;
+
+    @OneToMany(mappedBy = "item")
+    private List<AuctionUser> auctionusers;
 }
