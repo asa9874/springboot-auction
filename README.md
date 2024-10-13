@@ -6,7 +6,7 @@
 ### ✅ [구상,프로젝트 생성](https://asa9874.tistory.com/446)
 ### ✅ [엔티티 설계,생성](https://asa9874.tistory.com/463)
 
-### 페이지구현 및 매핑
+### 페이지 매핑(단순매핑,형태만구상)
 - ✅ [메인페이지](https://asa9874.tistory.com/468)
 - ✅ [로그인](https://asa9874.tistory.com/468)
 - ❌ [회원가입]
