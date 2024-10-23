@@ -9,7 +9,7 @@
 ### 페이지 매핑(단순매핑,형태만구상)
 - ✅ [메인페이지](https://asa9874.tistory.com/468)
 - ✅ [로그인](https://asa9874.tistory.com/468)
-- ❌ [회원가입]
+- ✅ [회원가입](https://asa9874.tistory.com/468)
 - ❌ [구입]
 - ❌ [판매]
 
