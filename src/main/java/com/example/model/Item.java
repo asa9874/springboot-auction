@@ -25,10 +25,5 @@ public class Item {
 
     @Column(length = 200)
     private String Description;
-    
-    @OneToMany(mappedBy = "item")
-    private List<Auction> auctions;
 
-    @OneToMany(mappedBy = "item")
-    private List<AuctionUser> auctionusers;
 }
