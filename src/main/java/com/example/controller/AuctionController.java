@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.dto.AuctionDTO;
-import com.example.model.Auction;
 import com.example.service.AuctionService;
 
 @RestController
@@ -20,7 +19,7 @@ public class AuctionController {
     AuctionService auctionService;
 
     @GetMapping("/")
-    public List<Auction> getAutionItems(){
+    public List<AuctionDTO> getAutionItems(){
         return auctionService.getAutionItems();
     }
 
