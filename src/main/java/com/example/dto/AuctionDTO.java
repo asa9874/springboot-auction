@@ -1,10 +1,7 @@
 package com.example.dto;
 
 import java.time.LocalDateTime;
-import com.example.model.Item;
 
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,10 +14,11 @@ public class AuctionDTO {
 
     private Integer auctionPrice;
 
-    @ManyToOne
-    @JoinColumn(name = "item_id")
-    private Item item;
+    private String itemName;
 
-    
+    private String itemDescription;
+
+    private Integer itemCount;
+
     private String userName;
 }
