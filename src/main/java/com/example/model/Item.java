@@ -21,6 +21,6 @@ public class Item {
     private String name;
 
     @Column(length = 200)
-    private String Description;
+    private String description;
 
 }

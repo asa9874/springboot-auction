@@ -13,14 +13,16 @@ import com.example.dto.AuctionDTO;
 import com.example.service.AuctionService;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/auction")
 @Tag(name = "경매물품API", description = "/auction")
 public class AuctionController {
     
-    @Autowired
-    AuctionService auctionService;
+    
+    private final AuctionService auctionService;
 
     @GetMapping("/")
     public List<AuctionDTO> autionItems(){

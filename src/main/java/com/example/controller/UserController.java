@@ -11,13 +11,15 @@ import com.example.dto.userInfoDTO;
 import com.example.service.UserService;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/user/{userid}")
 @Tag(name = "유저API", description = "/user")
 public class UserController {
-    @Autowired
-    private UserService userService;
+    
+    private final UserService userService;
 
 
     @PostMapping("/login")

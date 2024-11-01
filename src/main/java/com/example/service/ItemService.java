@@ -22,5 +22,9 @@ public class ItemService {
         return dto;
     }
 
+    public Item createItem(Item item){
+        return itemRepository.save(item);
+    }
+
     
 }
