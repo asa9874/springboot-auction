@@ -26,5 +26,21 @@ public class ItemService {
         return itemRepository.save(item);
     }
 
+
+    public boolean deleteItem(Long id){
+        if (itemRepository.existsById(id)) {
+            itemRepository.deleteById(id);
+            return true; 
+        }
+        return false; 
+    }
+
+    public Item modifyItem(Long id, Item item) {
+        if (itemRepository.existsById(id)) {
+            item.setId(id); 
+            return itemRepository.save(item); 
+        }
+        return null;
+    }
     
 }
