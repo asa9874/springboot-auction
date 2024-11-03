@@ -1,9 +1,9 @@
 package com.example.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +11,6 @@ import com.example.dto.ItemDTO;
 import com.example.model.Item;
 import com.example.service.ItemService;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
@@ -30,10 +29,6 @@ public class ItemController {
 
     @PostMapping("/create")
     public Item createItem(@RequestBody Item item){
-        System.out.println("Item ID: " + item.getId());
-        System.out.println("Item ImgUrl: " + item.getImgurl());
-        System.out.println("Item Name: " + item.getName());
-        System.out.println("Item Description: " + item.getDescription());
         return itemService.createItem(item);
     }
 
