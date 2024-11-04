@@ -1,6 +1,6 @@
 package com.example.service;
 
-import java.util.Optional;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,11 +14,19 @@ public class ItemService {
     @Autowired
     private ItemRepository itemRepository;
 
-    public Optional<Item> getItemById(Long id){
-        return itemRepository.findById(id);
+    public Item getItemById(Long id){
+        if (id <= 0) {
+            throw new IllegalArgumentException("ID must be greater than 0");
+        }
+        
+        return itemRepository.findById(id)
+            .orElseThrow(() -> new NoSuchElementException());
     }
 
     public Item createItem(ItemDTO itemdto){
+        if (itemRepository.existsByName(itemdto.getName())) {
+            throw new IllegalArgumentException("Item with this name already exists");
+        }
         Item item = Item.builder()
             .imgurl(itemdto.getImgurl())
             .name(itemdto.getName())
@@ -41,7 +49,7 @@ public class ItemService {
             item.setId(id); 
             return itemRepository.save(item); 
         }
-        return null;
+        throw new NoSuchElementException("Item not found with id " + id);
     }
     
 }

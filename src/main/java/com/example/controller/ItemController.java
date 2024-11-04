@@ -1,7 +1,5 @@
 package com.example.controller;
 
-import java.util.Optional;
-
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +14,7 @@ import com.example.model.Item;
 import com.example.service.ItemService;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -27,12 +26,12 @@ public class ItemController {
     private final ItemService itemService;
 
     @GetMapping("/{id}")
-    public Optional<Item> getItemById(@PathVariable("id") Long id){
+    public Item getItemById(@PathVariable("id") Long id){
         return itemService.getItemById(id);
     }
 
     @PostMapping("/create")
-    public Item createItem(@RequestBody ItemDTO itemdto){
+    public Item createItem(@Valid @RequestBody ItemDTO itemdto){
         return itemService.createItem(itemdto);
     }
 

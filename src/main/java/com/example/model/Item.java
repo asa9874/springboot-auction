@@ -24,7 +24,7 @@ public class Item {
 
     private String imgurl;
 
-
+    @Column(unique = true)
     private String name;
 
     @Column(length = 200)
