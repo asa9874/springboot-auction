@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import java.util.Optional;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,13 +27,13 @@ public class ItemController {
     private final ItemService itemService;
 
     @GetMapping("/{id}")
-    public ItemDTO getItemById(@PathVariable("id") Long id){
+    public Optional<Item> getItemById(@PathVariable("id") Long id){
         return itemService.getItemById(id);
     }
 
     @PostMapping("/create")
-    public Item createItem(@RequestBody Item item){
-        return itemService.createItem(item);
+    public Item createItem(@RequestBody ItemDTO itemdto){
+        return itemService.createItem(itemdto);
     }
 
     @DeleteMapping("/{id}")

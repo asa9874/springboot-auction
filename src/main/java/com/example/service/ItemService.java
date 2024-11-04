@@ -1,5 +1,7 @@
 package com.example.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,17 +14,16 @@ public class ItemService {
     @Autowired
     private ItemRepository itemRepository;
 
-    public ItemDTO getItemById(Long id){
-        Item item=itemRepository.findById(id).get();
-        ItemDTO dto= new ItemDTO();
-        dto.setDescription(item.getDescription());
-        dto.setId(item.getId());
-        dto.setImgurl(item.getImgurl());
-        dto.setName(item.getName());
-        return dto;
+    public Optional<Item> getItemById(Long id){
+        return itemRepository.findById(id);
     }
 
-    public Item createItem(Item item){
+    public Item createItem(ItemDTO itemdto){
+        Item item = Item.builder()
+            .imgurl(itemdto.getImgurl())
+            .name(itemdto.getName())
+            .description(itemdto.getDescription())
+            .build();
         return itemRepository.save(item);
     }
 
