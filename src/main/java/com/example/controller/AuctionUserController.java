@@ -1,14 +1,13 @@
 package com.example.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.dto.userInfoDTO;
-import com.example.service.UserService;
+import com.example.dto.AuctionuserInfoDTO;
+import com.example.service.AuctionUserService;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -17,9 +16,9 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/user/{userid}")
 @Tag(name = "유저API", description = "/user")
-public class UserController {
+public class AuctionUserController {
     
-    private final UserService userService;
+    private final AuctionUserService userService;
 
 
     @PostMapping("/login")
@@ -29,7 +28,7 @@ public class UserController {
     public void userRegister(){}
 
     @GetMapping("/info/{id}")
-    public userInfoDTO userInfo(@PathVariable("id") long id){
+    public AuctionuserInfoDTO userInfo(@PathVariable("id") long id){
         return userService.getUserInfo(id);
     }
 

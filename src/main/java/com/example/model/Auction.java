@@ -30,5 +30,5 @@ public class Auction {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User auctionuser;
+    private AuctionUser auctionuser;
 }
