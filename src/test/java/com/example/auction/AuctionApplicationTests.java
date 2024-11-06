@@ -1,6 +1,8 @@
 package com.example.auction;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,6 +80,26 @@ class AuctionApplicationTests {
 			auction.setItemCount(99);
             auctionRepository.save(auction);
         }
+	}
+
+	@Test
+	void ItemOwnerUserLoad(){
+		Item item = Item.builder()
+			.imgurl("testurl")
+			.name("testAuctionitem")
+			.description("It's just test")
+			.build();
+		itemRepository.save(item);
+		
+		AuctionUser user = AuctionUser.builder()
+			.email(null)
+			.item(null)
+			.money(null)
+			.password(null)
+			.usernickname("홍길동테스트3")
+			.item(new ArrayList<>(List.of(item)))
+			.build();
+			auctionUserRepository.save(user);
 	}
 
 
